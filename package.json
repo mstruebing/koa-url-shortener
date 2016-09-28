@@ -4,7 +4,7 @@
   "description": "An URL shortener API with koa",
   "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "xo --esnext src/*js"
   },
   "keywords": [
     "url",
@@ -13,5 +13,8 @@
     "api"
   ],
   "author": "Max Strübing",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "xo": "^0.16.0"
+  }
 }
