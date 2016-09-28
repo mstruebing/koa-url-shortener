@@ -1,0 +1,17 @@
+{
+  "name": "koa-url-shortener",
+  "version": "1.0.0",
+  "description": "An URL shortener API with koa",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "url",
+    "short",
+    "koa",
+    "api"
+  ],
+  "author": "Max Strübing",
+  "license": "MIT"
+}
