@@ -4,7 +4,8 @@
   "description": "An URL shortener API with koa",
   "main": "src/app.js",
   "scripts": {
-    "start": "babel-node src/app.js",
+    "start": "NODE_ENV=Production babel-node src/app.js",
+    "dev": "NODE_ENV=Development babel-node src/app.js",
     "lint": "xo --esnext src/*js"
   },
   "keywords": [
