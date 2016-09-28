@@ -4,7 +4,8 @@
   "description": "An URL shortener API with koa",
   "main": "src/app.js",
   "scripts": {
-    "test": "xo --esnext src/*js"
+    "start": "babel-node src/app.js",
+    "lint": "xo --esnext src/*js"
   },
   "keywords": [
     "url",
@@ -15,6 +16,11 @@
   "author": "Max Strübing",
   "license": "MIT",
   "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-preset-es2015": "^6.14.0",
     "xo": "^0.16.0"
+  },
+  "dependencies": {
+    "koa": "^1.2.4"
   }
 }
