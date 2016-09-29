@@ -1,13 +1,22 @@
 import koa from 'koa';
+import koaRouter from 'koa-router';
 
 const app = koa();
+const router = koaRouter();
+
 const port = process.env.PORT || 3000;
 const context = process.env.NODE_ENV || 'Development';
 
-app.use(function * (next) {
-	this.response.body = 'hello world';
-	yield * next;
+router.get('/', function * (next) {
+	this.body = 'Hello World';
+	yield next;
+})
+.get('/wha', function * (next) {
+	this.body = 'whaaaa';
+	yield next;
 });
+
+app.use(router.routes());
 
 console.log(`App is running in ${context} context on port ${port}`);
 
