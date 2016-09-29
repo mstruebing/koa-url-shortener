@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
 
+
+NVM=/usr/share/nvm/init-nvm.sh
+source $NVM
+
+source $NVM &&
+nvm install &&
+nvm use &&
 npm install && 
 cp -f ./Build/Githooks/pre-commit ./.git/hooks/
