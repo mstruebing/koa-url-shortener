@@ -1,8 +1,6 @@
 sudo: false
 language: "node_js"
 node_js:
-before_script:
-  - npm install
 script:
   - npm run lint
   - npm test
