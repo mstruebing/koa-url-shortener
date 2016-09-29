@@ -5,7 +5,8 @@
   "main": "src/app.js",
   "scripts": {
     "start": "NODE_ENV=Production babel-node src/app.js",
-    "dev": "NODE_ENV=Development babel-node src/app.js",
+    "dev": "nodemon --exec npm run babel-node -- src/app.js",
+    "babel-node": "babel-node",
     "lint": "xo --esnext src/*js",
     "test": "echo no tests until now"
   },
@@ -20,6 +21,7 @@
   "devDependencies": {
     "babel-cli": "^6.14.0",
     "babel-preset-es2015": "^6.14.0",
+    "nodemon": "^1.10.2",
     "xo": "^0.16.0"
   },
   "dependencies": {

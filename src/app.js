@@ -4,8 +4,8 @@ import koaRouter from 'koa-router';
 const app = koa();
 const router = koaRouter();
 
-const port = process.env.PORT || 3000;
-const context = process.env.NODE_ENV || 'Development';
+const port = process.env.PORT || 8080;
+const context = process.env.NODE_ENV || 'development';
 
 router.get('/', function * (next) {
 	this.body = 'Hello World';
