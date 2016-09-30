@@ -4,4 +4,7 @@
 
 You need Docker up and running
 
-`./setup && ./dev`
+`docker-compose build && docker-compose up`
+
+Then head to 
+`0.0.0.0:8080`
