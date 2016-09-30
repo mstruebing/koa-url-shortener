@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-CONTAINER_NAME=koa_url_shortener
-
-docker stop ${CONTAINER_NAME}  
-docker rm ${CONTAINER_NAME}
-
-docker run -d -p 8080:8080 --name ${CONTAINER_NAME} -v $PWD:/usr/src/app koaurlshortener /usr/src/app/Build/Scripts/entrypoint.sh

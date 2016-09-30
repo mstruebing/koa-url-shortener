@@ -4,8 +4,7 @@
   "description": "An URL shortener API with koa",
   "main": "src/app.js",
   "scripts": {
-    "start": "NODE_ENV=Production babel-node src/app.js",
-    "dev": "nodemon --exec npm run babel-node -- src/app.js",
+    "start": "nodemon --exec npm run babel-node -- src/app.js",
     "babel-node": "babel-node",
     "lint": "xo --esnext src/*js",
     "test": "echo no tests until now"
@@ -26,6 +25,8 @@
   },
   "dependencies": {
     "koa": "^1.2.4",
+    "koa-body": "^1.5.0",
+    "koa-mongo": "^0.6.0",
     "koa-router": "^5.4.0"
   }
 }

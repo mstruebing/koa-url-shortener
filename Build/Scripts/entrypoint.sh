@@ -1,3 +1,3 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-cd /usr/src/app && npm install && npm run dev
+cd /app && npm i && npm start

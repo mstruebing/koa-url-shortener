@@ -1,0 +1,14 @@
+koa-url-shortener:
+  build: ./
+  ports:
+    - "8080:8080"
+  links:
+    - db
+  volumes:
+    - .:/app
+  entrypoint: /app/Build/Scripts/entrypoint.sh
+
+db:
+  image: mongo
+  volumes:
+    - ./data/db:/data/db
