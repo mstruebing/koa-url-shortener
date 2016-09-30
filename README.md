@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/mstruebing/koa-url-shortener.svg?branch=master)](https://travis-ci.org/mstruebing/koa-url-shortener) https://david-dm.org/mstruebing/koa-url-shortener.svg
+[![Build Status](https://travis-ci.org/mstruebing/koa-url-shortener.svg?branch=master)](https://travis-ci.org/mstruebing/koa-url-shortener) [![Dependency status](https://david-dm.org/mstruebing/koa-url-shortener.svg)](https://david-dm.org/mstruebing/koa-url-shortener.svg)
 
 ## Development
 
