@@ -2,6 +2,7 @@ import koa from 'koa';
 import koaRouter from 'koa-router';
 import koaBody from 'koa-body';
 import mongo from 'koa-mongo';
+import uuid from 'uuid';
 
 const app = koa();
 const router = koaRouter();
@@ -23,19 +24,17 @@ router.get('/', function * (next) {
 	yield next;
 })
 .post('/add', bodyParser, function * (next) {
-	yield this.mongo.db('shorty').collection('urls').insert({url: this.request.body.url});
-	const x = this.mongo.db('shorty').collection('urls').find().limit(1).sort({$natural: -1});
-	x.each((err, doc) => {
-		if (err) {
-			console.log(err);
-		} else if (doc !== null) {
-			console.log(doc);
-		}
-	});
+	const id = uuid.v4();
+	yield this.mongo.db('shorty').collection('urls').insert({_id: id, url: this.request.body.url});
+	this.body = this.request.origin.concat('/', id);
 	yield next;
 })
 .get('/:id', function * (next) {
-	this.body = this.params.id;
+	const url = yield this.mongo.db('shorty').collection('urls').findOne({_id: this.params.id});
+	if (url) {
+		this.redirect(url.url);
+		this.mongo.db('shorty').collection('urls').remove({_id: this.params.id});
+	}
 	yield next;
 });
 
