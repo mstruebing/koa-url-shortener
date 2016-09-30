@@ -23,7 +23,15 @@ router.get('/', function * (next) {
 	yield next;
 })
 .post('/add', bodyParser, function * (next) {
-	this.body = this.request.body.url;
+	yield this.mongo.db('shorty').collection('urls').insert({url: this.request.body.url});
+	const x = this.mongo.db('shorty').collection('urls').find().limit(1).sort({$natural: -1});
+	x.each((err, doc) => {
+		if (err) {
+			console.log(err);
+		} else if (doc !== null) {
+			console.log(doc);
+		}
+	});
 	yield next;
 })
 .get('/:id', function * (next) {
