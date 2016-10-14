@@ -1,4 +1,4 @@
-koa-url-shortener:
+koaurlshortener:
   build: ./
   ports:
     - "8080:8080"

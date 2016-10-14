@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-cd /app && npm i && npm start
+cd /app && yarn install && npm start
